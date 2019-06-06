@@ -1,0 +1,25 @@
+{
+  "name": "final-project-cs290-final-project-planner",
+  "version": "1.0.0",
+  "description": "Planner Webpage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-sp19/final-project-cs290-final-project-planner"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp19/master-assignment-5/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-planner/#readme",
+  "dependencies": {
+  },
+  "devDependencies": {}
+}

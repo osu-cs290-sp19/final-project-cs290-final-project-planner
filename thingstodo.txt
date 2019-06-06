@@ -1,0 +1,23 @@
+FILES TO BE WORKED ON:
+
+    - package.json
+    - server.js
+    - categoryData.json
+    - listData.json
+
+PUBLIC
+    - index.js
+    - style.css
+
+VIEWS
+    - 404.handlebars
+    - itemGrid.handlebars
+VIEWS/LAYOUTS
+    - main.handlebars
+VIEWS/PARTIALS
+    - header.handlebars
+    - category.handlebars
+    - categoryModal.handlebars
+    - list.handlebars
+    - listModal.handlebars
+    - newButton.handlebars
