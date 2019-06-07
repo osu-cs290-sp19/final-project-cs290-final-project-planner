@@ -10,14 +10,14 @@ PUBLIC
     - style.css
 
 VIEWS
-    - 404.handlebars
+    - 404.handlebars - Anjali
     - itemGrid.handlebars
 VIEWS/LAYOUTS
-    - main.handlebars
+    - main.handlebars - Anjali
 VIEWS/PARTIALS
-    - header.handlebars
-    - category.handlebars
-    - categoryModal.handlebars
-    - list.handlebars
-    - listModal.handlebars
-    - newButton.handlebars
+    - header.handlebars - Anjali
+    - category.handlebars - Sneha
+    - categoryModal.handlebars - Arjun
+    - list.handlebars - Sneha
+    - listModal.handlebars - Arjun
+    - newButton.handlebars - Anjali
