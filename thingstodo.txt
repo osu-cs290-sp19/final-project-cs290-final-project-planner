@@ -21,4 +21,3 @@ VIEWS/PARTIALS
     - list.handlebars - Sneha
     - listModal.handlebars - Arjun
     - newButton.handlebars - Anjali
-    -hiiii
