@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>My Planner</title>
+
+    <!-- This is a 3rd-party stylesheet to make available the font family to be used for this page ("Roboto"). -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <!-- This 3rd-party stylesheet incorporates SVG icons from Font Awesome: http://fontawesome.com/ -->
+  <!-- link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous"-->
+
+    <link rel="stylesheet" href="/style.css" media="screen">
+
+
+     <script src = "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.runtime.js" charset="utf-8" defer></script>
+    <!-- <script src= "/twitTemplate.js" charset="utf-8" defer > </script>-->
+
+     <script src="/index.js" charset="utf-8" defer></script>
+
+
+
+  </head>
+
+  <body>
+
+
+    {{> header }}
+
+    {{{body}}}
+  </body>
+</html>
