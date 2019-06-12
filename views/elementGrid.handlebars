@@ -1,0 +1,15 @@
+<main class="elementContainer">
+
+    {{#if categoryPage}}
+        {{#each categoryDisplay}}
+            {{> category}}
+        {{/each}}
+    {{/if}}
+
+    {{#if listPage}}
+        {{#each listDisplay}}
+            {{> list}}
+        {{/each}}
+    {{/if}}
+
+</main>
