@@ -37,54 +37,33 @@
         <article class="list">
           <div class="listContent">
             <p class="listName">
-              {{listName}}
+              NAME
             </p>
-            <p class="makeList">
-              {{#each newItem}}
-                {{> createListItem}}
-              {{/each}}
-            </p>
+            <div class="makeList">
+                <ul>
+                    <li class="newItem"> ITEM 1 </li>
+                    <li class="newItem"> ITEM 2 </li>
+                    <li class="newItem"> ITEM 3 </li>
+                    <li class="newItem"> ITEM 4 </li>
+                </ul>
+            </div>
+            <div class="newItemInsert">
+                <div class="insertBody">
+
+                    <div class="newItemInsertBody">
+                        <label for="listItemInput">New To-Do Item:</label>
+                        <input id="listItemInput"></textarea>
+                    </div>
+
+                    <div class="newItemInsertButtons">
+                        <button type="button" class="createList">Create List!</button>
+                    </div>
+
+                </div>
+            </div>
           </div>
         </article>
 
-        <div id="modalBackdrop" class="hidden"></div>
-        <div id="createListModal" class="hidden">
-
-            <div class="modalWindow">
-
-                <div class="modalHeader">
-                    <h3>Create a List!</h3>
-                    <button type="button" class="closeModal">&times;</button>
-                </div>
-
-                <div class="modalBody">
-
-                    <div class="listNameElement">
-                        <label for="listNameInput">Name:</label>
-                        <textarea id="listNameInput"></textarea>
-                    </div>
-
-                    <div class="listColorSelector">
-                        <button type="button" class="colorOption1"></button>
-                        <button type="button" class="colorOption2"></button>
-                        <button type="button" class="colorOption3"></button>
-                        <button type="button" class="colorOption4"></button>
-                        <button type="button" class="colorOption5"></button>
-                        <button type="button" class="colorOption6"></button>
-                        <button type="button" class="colorOption7"></button>
-                        <button type="button" class="colorOption8"></button>
-                    </div>
-
-                </div>
-
-                <div class="modalFooter">
-                    <button type="button" class="cancelModal">Cancel</button>
-                    <button type="button" class="createList">Create List!</button>
-                </div>
-
-            </div>
-
-        </div>
 
     </main>
 
