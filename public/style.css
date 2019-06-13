@@ -43,33 +43,35 @@ a {
   flex-wrap: wrap;
 }
 
-.category {
-  flex: 0 1 28%;
+.list {
+  flex: 0 4 0%;
   display: flex;
   margin: 2px;
-  padding: 20px;
+  padding: 10%;
   border: 1px solid #dadada;
   border-radius: 2px;
   background-color: #fff;
 }
 
-.categoryContent {
+.listContent {
   flex: 1 1 80%;
   margin-left: 0px;
 
 }
 
-.categoryName {
+.listName {
   font-weight:bold;
   margin: 0;
   text-align: center;
   color: #2b222b;
+  font-size: 200%;
 }
 
-.categoryDesc {
-  margin: 0px;
+.makeList {
+  margin: 5px;
   text-align: center;
   color: #2b222b;
+  font-size: 100%;
 }
 
 #createButton {
@@ -89,5 +91,11 @@ a {
 
 #createButton:hover,
 #createButton:focus{
-  
+  right: 0;
+  bottom: 45px;
+  height: 50px;
+  width: 50px;
+  border-radius: 33px;
+  font-size: 34px;
+  background-color: #dba4a4;
 }
