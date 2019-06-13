@@ -4,9 +4,11 @@
       {{listName}}
     </p>
     <p class="makeList">
-      {{#each newItem}}
-        {{> createListItem}}
-      {{/each}}
+        <ul>
+            {{#each listItems}}
+              {{> createListItem}}
+            {{/each}}
+        </ul>
     </p>
   </div>
 </article>
