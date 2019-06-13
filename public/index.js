@@ -4,9 +4,9 @@
 	var path = window.location.pathname;
 	var pathParts = path.split('/');
 	if (partParts[1] === "category"){
-		return partParts[2];		
+		return partParts[2];
 	} else{
-		return null; 
+		return null;
 	}
 }*/
 
@@ -19,9 +19,9 @@ function handleModalAcceptClick(){
 		alert("You must write a title and description");
 	}
 	//else{
-		
+
 	//	var postRequest = new XMLHttpRequest();
-	//	var requestURL = '/category' + getCategoryIdFromURL()+'/addCategory'; 
+	//	var requestURL = '/category' + getCategoryIdFromURL()+'/addCategory';
 	//	postRequest.open('POST',requestURL);
 
 	//      var requestBody = JSON.stringify({
@@ -29,28 +29,28 @@ function handleModalAcceptClick(){
 	//		title: title
 	//	});
 	postRequest.addEventListener('load',function(event){
-		if(event.target.status === 200){	
+		if(event.target.status === 200){
 			var listTemplate = Handlebars.templates.list;
 			var newListHTML = listTemplate({
-				title:title	
+				title:title
 				desc:desc
-				listArr:listArr	
+				listArr:listArr
 			});
 			var listContainer = document.querySelector('.listContainer');
-			listContainer.insertAdjacentHTML('beforeend',newListHTML);	
+			listContainer.insertAdjacentHTML('beforeend',newListHTML);
 		}else{
 			alert("Error storing list: " + event.target.response);
 		}
-	
+
 	});
 
 		postRequest.setRequestHeader('ContentType', 'application/json');
 		postRequest.send(requestBody);
-		
+
 		hideModal();
 
 	//}
-	
+
 }
 
 
@@ -59,7 +59,7 @@ function showModal(){
 
 
 	var modal = document.getElementById('addListModal');
-	var modalBackdrop = document.getElementById('modalBackdrop'); 
+	var modalBackdrop = document.getElementById('modalBackdrop');
 
 	modal.classList.remove('hidden');
 	modalBackdrop.classList.remove('hidden');
@@ -76,7 +76,7 @@ function clearModalInputs(){
 }
 
 function hideModal(){
-	
+
 	var modal = document.getElementById('addListModal');
 	var modalBackdrop = document.getElementById('modalBackdrop');
 
@@ -93,7 +93,7 @@ window.addEventListener('DOMContentLoaded', function (){
 	if(addListButton){
 		addListButton.addEventListener('click', showModal);
 	}
-	
+
 	var modalAcceptButton = document.getElementById('modalAccept');
 	if(modalAcceptButton){
 		modalAcceptButton.addEventListener('click',handleModalAcceptClick);
@@ -105,5 +105,3 @@ window.addEventListener('DOMContentLoaded', function (){
 	}
 
 });
-
-
