@@ -7,56 +7,56 @@ function checkValidPost(){
 		alert("You must write a title");
 	}
 	else{
-		
+
 		let postRequest = new XMLHttpRequest();
 		let postURL = "/addList";
 		postRequest.open('POST',postURL);
 
 	let newListObject = {
 		listName:name.value
-	};	
+	};
 
 
-	let requestBody = JSON.stringify(newListObject); 
+	let requestBody = JSON.stringify(newListObject);
 
 	postRequest.addEventListener('load',function(event){
-		if(event.target.status === 200){	
+		if(event.target.status === 200){
 			var listTemplate = Handlebars.templates.list;
 			var newListHTML = listTemplate(newListObject);
 			var listContainer = document.getElementsByClassName('.elementContainer');
-			listContainer.insertAdjacentHTML('beforeend',newListHTML);	
+			listContainer.insertAdjacentHTML('beforeend',newListHTML);
 		}else{
 			alert("Error storing list: " + event.target.response);
 		}
-	
+
 	});
 
 		postRequest.setRequestHeader('ContentType', 'application/json');
 		postRequest.send(requestBody);
-		
+
 		hideModal();
 
 	}
-	
+
 }
 
 function showModal(){
 
-
 	var modal = document.getElementById('createListModal');
-	var backdrop = document.getElementById('modalBackdrop'); 
+	var backdrop = document.getElementById('modalBackdrop');
 
 	modal.classList.remove('hidden');
 	backdrop.classList.remove('hidden');
 
 }
+
 function hideModal(){
 
         var modal = document.getElementById('createListModal');
         var backdrop = document.getElementById('modalBackdrop');
 
 	clearModalInputs();
-	
+
         modal.classList.add('hidden');
         modalBackdrop.classList.add('hidden');
 
@@ -77,8 +77,8 @@ window.addEventListener('DOMContentLoaded', function (){
 	if(newListButton){
 		newListButton.addEventListener('click', showModal);
 	}
-	
-	var modalAcceptButton = document.getElementByClassName('createList');
+
+	var modalAcceptButton = document.getElementsByClassName('createList');
 	for(var i=0;i<modalAcceptButton.length;i++){
 		modalAcceptButton[i].addEventListener('click',checkValidPost);
 	}

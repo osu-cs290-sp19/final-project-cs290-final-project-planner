@@ -58,7 +58,11 @@ app.get('/', function(req, res){
     });
 });
 
-app.get('*', function (req, res, next) {
+app.get('404', function (req, res) {
+  res.status(404).render('404');
+});
+
+app.get('*', function (req, res) {
   res.status(404).render('404');
 });
 
