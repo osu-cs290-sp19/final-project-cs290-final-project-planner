@@ -158,7 +158,7 @@ a {
 
 .modalBody {
   padding: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .listNameElement {
@@ -186,7 +186,7 @@ a {
 .modalFooter {
   display: flex;
   justify-content: flex-end;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 10px 5px 10px;
 }
 
 .modalFooter button {
@@ -198,7 +198,7 @@ a {
   border-radius: 5px;
   padding: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   cursor: pointer;
 }
 .modalFooter .cancelModal:hover {
