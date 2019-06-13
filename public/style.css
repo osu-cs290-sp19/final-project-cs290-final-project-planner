@@ -161,6 +161,19 @@ a {
   padding-bottom: 60px;
 }
 
+.listName {
+  margin: 0px;
+}
+
+.makeList {
+  margin: 0px;
+}
+
+ul {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
 .listNameElement {
   display: flex;
   align-items: center;
@@ -168,7 +181,43 @@ a {
   margin: 10px 0;
 }
 
-.listNameElement label {
+.newItemInsert {
+  margin: 5px;
+}
+
+.newItemInsertBody label {
+  font-weight: bold;
+  color: #2b222b;
+}
+
+.newItemInsertBody input {
+  font-size: 15px;
+  border: 1px solid #cecece
+}
+
+.newItemInsertButtons {
+  margin-top: 7px;
+}
+
+.newItemInsertButtons button {
+  font-family: 'Assistant', sans-serif;
+  font-size: 18px;
+  width: 100%;
+  height: 5%;
+  background-color: #fff;
+  color: #2b222b;
+  border: 1px solid #2b222b;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.newItemInsertButtons button:hover {
+  background-color: #dba4a4;
+}
+/* .listNameElement label {
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
@@ -181,7 +230,7 @@ a {
   font-size: 20px;
   border: 1px solid #aaa;
   color: #2b222b;
-}
+} */
 
 /* .listColorSelector button {
   height: 25px;
