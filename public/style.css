@@ -183,6 +183,17 @@ a {
   color: #2b222b;
 }
 
+/* .listColorSelector button {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.listColorSelector button .colorOption1 {
+  color: blue;
+} */
 .modalFooter {
   display: flex;
   justify-content: flex-end;
