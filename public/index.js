@@ -1,6 +1,6 @@
 function checkValidPost(){
 	//var desc      = document.getElementById('listDescInput').value.trim();
-	var name = document.getElementById('listTitleInput').value.trim();
+	var name = document.getElementById('listNameInput').value.trim();
 	//var listArr   = document.getElementById('listArrInput').value.trim();
 
 	if(name.value==' '){
@@ -39,46 +39,46 @@ function checkValidPost(){
 	}
 
 }
-
-function checkValidItem(){
-	var name = document.getElementById('listTitleInput').value.trim();
-
-	if(name.value==' '){
-		alert("You must write a title");
-	}
-	else{
-
-		let postRequest = new XMLHttpRequest();
-		let postURL = "/addListItem";
-		postRequest.open('POST',postURL);
-
-	let newListObject = {
-		listName:name.value
-	};
-
-
-	let requestBody = JSON.stringify(newListObject);
-
-	postRequest.addEventListener('load',function(event){
-		if(event.target.status === 200){
-			var listTemplate = Handlebars.templates.list;
-			var newListHTML = listTemplate(newListObject);
-			var listContainer = document.getElementsByClassName('.elementContainer');
-			listContainer.insertAdjacentHTML('beforeend',newListHTML);
-		}else{
-			alert("Error storing list: " + event.target.response);
-		}
-
-	});
-
-		postRequest.setRequestHeader('ContentType', 'application/json');
-		postRequest.send(requestBody);
-
-		hideModal();
-
-	}
-
-}
+//
+// function checkValidItem(){
+// 	var name = document.getElementById('listTitleInput').value.trim();
+//
+// 	if(name.value==' '){
+// 		alert("You must write a title");
+// 	}
+// 	else{
+//
+// 		let postRequest = new XMLHttpRequest();
+// 		let postURL = "/addListItem";
+// 		postRequest.open('POST',postURL);
+//
+// 	let newListObject = {
+// 		listName:name.value
+// 	};
+//
+//
+// 	let requestBody = JSON.stringify(newListObject);
+//
+// 	postRequest.addEventListener('load',function(event){
+// 		if(event.target.status === 200){
+// 			var listTemplate = Handlebars.templates.list;
+// 			var newListHTML = listTemplate(newListObject);
+// 			var listContainer = document.getElementsByClassName('.elementContainer');
+// 			listContainer.insertAdjacentHTML('beforeend',newListHTML);
+// 		}else{
+// 			alert("Error storing list: " + event.target.response);
+// 		}
+//
+// 	});
+//
+// 		postRequest.setRequestHeader('ContentType', 'application/json');
+// 		postRequest.send(requestBody);
+//
+// 		hideModal();
+//
+// 	}
+//
+// }
 
 function showModal(){
 
@@ -131,9 +131,9 @@ window.addEventListener('DOMContentLoaded', function (){
 	for(var i=0;i<modalCancelButton.length;i++){
 		modalCancelButton[i].addEventListener('click', hideModal);
 	}
-	
-	var newListItemButton = document.getElementsByClassName('addTask');
-	for(var i=0;i<newListItemButton.length;i++){
-		newListItemButton[i].addEventListener('click', checkValidItem);
-	}
+
+	// var newListItemButton = document.getElementsByClassName('addTask');
+	// for(var i=0;i<newListItemButton.length;i++){
+	// 	newListItemButton[i].addEventListener('click', checkValidItem);
+	// }
 });
