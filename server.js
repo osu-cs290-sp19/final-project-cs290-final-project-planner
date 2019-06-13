@@ -8,11 +8,11 @@ var MongoClient = require('mongodb').MongoClient;
 var app = express();
 var port = process.env.PORT || 3000;
 
-var mongoHost = process.env.MONGO_HOST || classmongo.engr.oregonstate.edu;
+var mongoHost = process.env.MONGO_HOST || "classmongo.engr.oregonstate.edu";
 var mongoPort = process.env.MONGO_PORT || 27017;
-var mongoUser = process.env.MONGO_USER || cs290_bhallaa;
-var mongoPassword = process.env.MONGO_PASSWORD || aBhalla446;
-var mongoDBName = process.env.MONGO_DB_NAME || cs290_bhallaa;
+var mongoUser = process.env.MONGO_USER || "cs290_bhallaa";
+var mongoPassword = process.env.MONGO_PASSWORD || "aBhalla_446";
+var mongoDBName = process.env.MONGO_DB_NAME || "cs290_bhallaa";
 
 var mongoUrl = `mongodb://${mongoUser}:${mongoPassword}@${mongoHost}:${mongoPort}/${mongoDBName}`;
 var db = null;
