@@ -156,8 +156,8 @@ function closeModal() {
 function clearModalInputs() {
 
 	var modalInputElements = document.querySelectorAll('#createListModal input')
-	for(var i=0; i<modalInputElements.length; i++){
-		modalInputElements[i].value = ' ';
+	for(var i = 0; i < modalInputElements.length; i++){
+		modalInputElements[i].value = '';
 	}
 
 }
