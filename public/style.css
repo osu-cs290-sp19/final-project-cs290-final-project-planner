@@ -179,8 +179,6 @@ a {
   border: 1px solid #aaa;
 }
 
-
-
 .modalFooter {
   display: flex;
   justify-content: flex-end;
@@ -193,7 +191,7 @@ a {
 
 .modalFooter .createList {
   background-color: none;
-  color: #fff;
+  color: #2b222b;
 }
 
 .modalFooter .createList:hover {
