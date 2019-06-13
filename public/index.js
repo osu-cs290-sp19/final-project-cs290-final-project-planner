@@ -122,7 +122,7 @@ window.addEventListener('DOMContentLoaded', function (){
 		modalAcceptButton[i].addEventListener('click', checkValidPost);
 	}
 
-	var modalHideButton = document.querySelectorAll('cancelModal','hideModal');
+	var modalHideButton = document.querySelectorAll("cancelModal","closeModal");
 	for(var i=0;i <modalHideButton.length; i++){
 		modalHideButton[i].addEventListener('click', hideModal);
 	}
