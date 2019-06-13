@@ -122,11 +122,16 @@ window.addEventListener('DOMContentLoaded', function (){
 		modalAcceptButton[i].addEventListener('click', checkValidPost);
 	}
 
-	var modalHideButton = document.querySelectorAll("cancelModal","closeModal");
-	for(var i=0;i <modalHideButton.length; i++){
+	var modalHideButton = document.getElementsByClassName('cancelModal');
+	for(var i=0;i<modalHideButton.length;i++){
 		modalHideButton[i].addEventListener('click', hideModal);
 	}
 
+	var modalCancelButton = document.getElementsByClassName('closeModal');
+	for(var i=0;i<modalCancelButton.length;i++){
+		modalCancelButton[i].addEventListener('click', hideModal);
+	}
+	
 	var newListItemButton = document.getElementsByClassName('addTask');
 	for(var i=0;i<newListItemButton.length;i++){
 		newListItemButton[i].addEventListener('click', checkValidItem);
