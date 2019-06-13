@@ -163,7 +163,7 @@ a {
   padding-bottom: 30px;
 }
 
-.modalBody textarea {
+.modalBody input {
   width: 100%;
   height: 150px;
   padding: 5px;
