@@ -1,6 +1,5 @@
 
 
-
 function checkValidPost(){
 	//var desc      = document.getElementById('listDescInput').value.trim();
 	var name     = document.getElementById('listTitleInput').value.trim();
