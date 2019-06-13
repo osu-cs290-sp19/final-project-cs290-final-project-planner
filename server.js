@@ -28,6 +28,24 @@ app.get('/', function (req, res, next) {
   res.status(200).render('elementGrid');
 });
 
+// function newCategory (newCategoryName, newCategoryColor) {
+//     var collection = db.collection('categories');
+//
+//     collection.insertOne({
+//         name: newCategoryName,
+//         color: newCategoryColor,
+//         lists: []
+//     });
+// };
+
+function newList (listCategory, newListName, newListColor, newListItems[]) {
+    var collection = db.collection('categories');
+
+    collection.updateOne({
+        lists
+    });
+};
+
 app.get('*', function (req, res, next) {
   res.status(404).render('404');
 });
