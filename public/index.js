@@ -1,5 +1,3 @@
-
-
 function checkValidPost(){
 	//var desc      = document.getElementById('listDescInput').value.trim();
 	var name     = document.getElementById('listTitleInput').value.trim();
@@ -14,13 +12,9 @@ function checkValidPost(){
 		let postURL = "/addList";
 		postRequest.open('POST',postURL);
 
-
-
 	let newListObject = {
 		listName:name.value
 	};	
-
-
 
 
 	let requestBody = JSON.stringify(newListObject); 
@@ -46,8 +40,6 @@ function checkValidPost(){
 	
 }
 
-
-
 function showModal(){
 
 
@@ -70,7 +62,6 @@ function hideModal(){
 
 }
 
-
 function clearModalInputs(){
 
 	var modalInputElements = document.querySelectorAll('#createListModal input')
@@ -78,7 +69,6 @@ function clearModalInputs(){
 		modalInputElements[i].value = ' ';
 	}
 }
-
 
 window.addEventListener('DOMContentLoaded', function (){
 
@@ -99,5 +89,3 @@ window.addEventListener('DOMContentLoaded', function (){
 	}
 
 });
-
-
