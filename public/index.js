@@ -1,13 +1,6 @@
-/*
- * Write your client-side JS code in this file.  Make sure to add your name and
- * @oregonstate.edu email address below.
- *
- * Name:Anjali Vasisht
- * Email:vasishta@oregonstate.edu
- */
 
 
-function getCategoryIdFromURL(){
+/*function getCategoryIdFromURL(){
 	var path = window.location.pathname;
 	var pathParts = path.split('/');
 	if (partParts[1] === "category"){
@@ -15,46 +8,48 @@ function getCategoryIdFromURL(){
 	} else{
 		return null; 
 	}
-}
+}*/
 
 function handleModalAcceptClick(){
-	var categoryURL = document.getElementById('photoURLInput').value.trim();
-	var title     = document.getElementById('photoTitleInput').value.trim();
-	
-	if(!categoryURL || !title){
-		alert("You must write the category");
-	}else{
-		
-		var postRequest = new XMLHttpRequest();
-		var requestURL = '/category' + getCategoryIdFromURL()+'/addCategory'; 
-		postRequest.open('POST',requestURL);
+	var desc      = document.getElementById('listDescInput').value.trim();
+	var title     = document.getElementById('listTitleInput').value.trim();
+	var listArr   = document.getElementById('listArrInput').value.trim();
 
-		var requestBody = JSON.stringify({
-			url:category,
-			title: title
-		});
+	if(!title||!desc){
+		alert("You must write a title and description");
+	}
+	//else{
+		
+	//	var postRequest = new XMLHttpRequest();
+	//	var requestURL = '/category' + getCategoryIdFromURL()+'/addCategory'; 
+	//	postRequest.open('POST',requestURL);
+
+	//      var requestBody = JSON.stringify({
+	//		url:category,
+	//		title: title
+	//	});
 	postRequest.addEventListener('load',function(event){
 		if(event.target.status === 200){	
-			var categoryTemplate = Handlebars.templates.category;
-			var newCategoryHTML = categoryTemplate({
-				url: category,
+			var listTemplate = Handlebars.templates.list;
+			var newListHTML = listTemplate({
 				title:title	
-	
+				desc:desc
+				listArr:listArr	
 			});
-			var categoryContainer = document.querySelector('.categoryContainer');
-			categoryContainer.insertAdjacentHTML('beforeend',newCategoryHTML);	
+			var listContainer = document.querySelector('.listContainer');
+			listContainer.insertAdjacentHTML('beforeend',newListHTML);	
 		}else{
-			alert("Error storing category: " + event.target.response);
+			alert("Error storing list: " + event.target.response);
 		}
 	
 	});
 
-		postRequest.setRequestHeader('Content-Type', 'application/json');
+		postRequest.setRequestHeader('ContentType', 'application/json');
 		postRequest.send(requestBody);
 		
 		hideModal();
 
-	}
+	//}
 	
 }
 
@@ -63,7 +58,7 @@ function handleModalAcceptClick(){
 function showModal(){
 
 
-	var modal = document.getElementById('addCategoryModal');
+	var modal = document.getElementById('addListModal');
 	var modalBackdrop = document.getElementById('modalBackdrop'); 
 
 	modal.classList.remove('hidden');
@@ -74,7 +69,7 @@ function showModal(){
 
 function clearModalInputs(){
 
-	var modalInputElements = document.querySelectorAll('#addCategoryModal input')
+	var modalInputElements = document.querySelectorAll('#addListModal input')
 	for(var i=0; i<modalInputElements.length; i++){
 		modalInputElements[i].value = ' ';
 	}
@@ -82,7 +77,7 @@ function clearModalInputs(){
 
 function hideModal(){
 	
-	var modal = document.getElementById('addCategoryModal');
+	var modal = document.getElementById('addListModal');
 	var modalBackdrop = document.getElementById('modalBackdrop');
 
 	modal.classList.add('hidden');
@@ -93,10 +88,10 @@ function hideModal(){
 
 window.addEventListener('DOMContentLoaded', function (){
 
-	var addCategoryButton = document.getElementById('addCategorybutton');
+	var addListButton = document.getElementById('addListbutton');
 
-	if(addCategoryButton){
-		addCategoryButton.addEventListener('click', showModal);
+	if(addListButton){
+		addListButton.addEventListener('click', showModal);
 	}
 	
 	var modalAcceptButton = document.getElementById('modalAccept');
