@@ -1,33 +1,33 @@
 function checkValidPost(){
-	//var desc      = document.getElementById('listDescInput').value.trim();
 	var name = document.getElementById('listNameInput').value.trim();
-	//var listArr   = document.getElementById('listArrInput').value.trim();
 
 	if(name.value==' '){
 		alert("You must write a title");
 	}
 	else{
 
-		let postRequest = new XMLHttpRequest();
-		let postURL = "/addList";
+		var postRequest = new XMLHttpRequest();
+		var postURL = "/addList";
 		postRequest.open('POST',postURL);
 
-	let newListObject = {
-		listName:name.value
-	};
+		let newListObject = {
+			listName:name.value,
+			listItems: []
+		};
 
 
-	let requestBody = JSON.stringify(newListObject);
+		var requestBody = JSON.stringify(newListObject);
 
-	postRequest.addEventListener('load',function(event){
-		if(event.target.status === 200){
-			var listTemplate = Handlebars.templates.list;
-			var newListHTML = listTemplate(newListObject);
-			var listContainer = document.getElementsByClassName('.elementContainer');
-			listContainer.insertAdjacentHTML('beforeend',newListHTML);
-		}else{
-			alert("Error storing list: " + event.target.response);
-		}
+		postRequest.addEventListener('load',function(event){
+			if(event.target.status === 200){
+				var listTemplate = Handlebars.templates.list; // ERROR???
+				var newListHTML = listTemplate(newListObject);
+				var listContainer = document.getElementsByClassName('.elementContainer');
+				listContainer.insertAdjacentHTML('beforeend',newListHTML);
+			}
+			else{
+				alert("Error storing list: " + event.target.response);
+			}
 
 	});
 

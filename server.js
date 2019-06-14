@@ -24,28 +24,6 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-// app.get('/', function (req, res, next) {
-//   res.status(200).render('elementGrid');
-// });
-
-// function newCategory (newCategoryName, newCategoryColor) {
-//     var collection = db.collection('categories');
-//
-//     collection.insertOne({
-//         name: newCategoryName,
-//         color: newCategoryColor,
-//         lists: []
-//     });
-// };
-
-// function newList (listCategory, newListName, newListColor, newListItems[]) {
-//     var collection = db.collection('categories');
-//
-//     collection.updateOne({
-//         lists
-//     });
-// };
-
 app.get('/', function(req, res){
     let listCollection = db.collection("todo");
     listCollection.find({}).toArray(function(err, listData){
@@ -76,7 +54,6 @@ app.post("/addList", function(req, res, next) {
 
             let newList = {
                 listName: req.body.listName,
-                listColor: req.body.listColor,
                 listItems: req.body.listItems
             };
 
@@ -95,35 +72,35 @@ app.post("/addList", function(req, res, next) {
     }
 })
 
-app.post("/:listName/addListItem", function(req, res, next) {
-    if (req.body) {
-        let listCollection = db.collection("todo");
-        listCollection.find({}).toArray(function(err, listData){
-            if (err) {
-                res.status(500).send("Database Error!");
-            }
-
-            let listCollection = db.collection("todo");
-            // listCollection.find({ name: req.params.listName });
-            listCollection.updateOne(
-                { listName: req.params.listName },
-                { $set: {
-                    listName: req.body.listName,
-                    listColor: req.body.listColor,
-                    listItems: req.body.listItems
-                }},
-                function (err, results) {
-                    if (err) {
-                        console.log(err);
-                    }
-                }
-            );
-        });
-    }
-    else {
-        next();
-    }
-})
+// app.post("/:listName/addListItem", function(req, res, next) {
+//     if (req.body) {
+//         let listCollection = db.collection("todo");
+//         listCollection.find({}).toArray(function(err, listData){
+//             if (err) {
+//                 res.status(500).send("Database Error!");
+//             }
+//
+//             let listCollection = db.collection("todo");
+//             // listCollection.find({ name: req.params.listName });
+//             listCollection.updateOne(
+//                 { listName: req.params.listName },
+//                 { $set: {
+//                     listName: req.body.listName,
+//                     listColor: req.body.listColor,
+//                     listItems: req.body.listItems
+//                 }},
+//                 function (err, results) {
+//                     if (err) {
+//                         console.log(err);
+//                     }
+//                 }
+//             );
+//         });
+//     }
+//     else {
+//         next();
+//     }
+// })
 
 // app.post("/editList/:listName", function(req, res, next) {
 //     if (req.body) {
