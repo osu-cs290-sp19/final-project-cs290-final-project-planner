@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "",
-    "prestart": "npm run build"
+    "build": "handlebars views/partials/list.handlebars -f public/listTemplate.js",
+    "prestart": "npm run build",
+    "predev": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/osu-cs290-sp19/master-assignment-5/issues"
+    "url": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-planner/issues"
   },
   "homepage": "https://github.com/osu-cs290-sp19/final-project-cs290-final-project-planner/#readme",
   "dependencies": {

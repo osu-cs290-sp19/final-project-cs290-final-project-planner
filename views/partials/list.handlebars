@@ -3,10 +3,26 @@
     <p class="listName">
       {{listName}}
     </p>
-    <p class="makeList">
-      {{#each newItem}}
-        {{> createListItem}}
-      {{/each}}
-    </p>
+    <div class="makeList">
+        <ul>
+            {{#each listItems}}
+              {{> createListItem}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="newItemInsert">
+        <div class="insertBody">
+
+            <div class="newItemInsertBody">
+                <label for="listItemInput">New To-Do Item:</label>
+                <input type="text "id="listItemInput"></input>
+            </div>
+
+            <div class="newItemInsertButtons">
+                <button type="button" class="addTask">Add Task</button>
+            </div>
+
+        </div>
+    </div>
   </div>
 </article>
