@@ -1,4 +1,4 @@
-Planner project
+To-Do List Project
 
 Final Project for CS290
 
