@@ -17,7 +17,20 @@ function checkValidPost(){
 	};	
 
 
+<<<<<<< Updated upstream
 	let requestBody = JSON.stringify(newListObject); 
+=======
+		postRequest.addEventListener('load',function(event){
+			if(event.target.status === 200){
+				var listTemplate = Handlebars.templates.list; // ERROR???
+				var newListHTML = listTemplate(newListObject);
+				var listContainer = document.getElementsByClassName('elementContainer');
+				listContainer.insertAdjacentHTML('beforeend',newListHTML);
+			}
+			else{
+				alert("Error storing list: " + event.target.response);
+			}
+>>>>>>> Stashed changes
 
 	postRequest.addEventListener('load',function(event){
 		if(event.target.status === 200){	

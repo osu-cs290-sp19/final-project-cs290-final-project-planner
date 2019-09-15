@@ -91,6 +91,7 @@ app.post("/addList", function(req, res, next) {
     }
 })
 
+<<<<<<< Updated upstream
 app.post("/:listName/addListItem", function(req, res, next) {
     if (req.body) {
         let listCollection = db.collection("todo");
@@ -98,6 +99,39 @@ app.post("/:listName/addListItem", function(req, res, next) {
             if (err) {
                 res.status(500).send("Database Error!");
             }
+=======
+// app.post("/addListItem", function(req, res, next) {
+//     if (req.body && req.body.name) {
+//         let listCollection = db.collection('todo');
+//           /*let listObj={
+//               listName: req.body.listName,
+//               listItem: req.body.listItem
+//           };*/
+//             // listCollection.find({ name: req.params.listName });
+//             listCollection.updateOne(
+//
+//                 { $push: {listItem:addListItem}},
+//                 function (err, results) {
+//                     if (err) {
+//                         res.status(500).send({
+//                             error:"Error inserting new item in DB"
+//                         });
+//                     }else{
+//                       console.log("== update result:",result);
+//                       if (result.matchedCount>0){
+//                         res.status(200).send("Success");
+//                       } else{
+//                           next();
+//                       }
+//                     }
+//                   }
+//            );
+//         } else{
+//             res.status(400).send("Request needs a name with a URL and caption");
+//         }
+// });
+
+>>>>>>> Stashed changes
 
             let listCollection = db.collection("todo");
             // listCollection.find({ name: req.params.listName });
